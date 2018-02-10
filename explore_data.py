@@ -2,11 +2,15 @@ import pandas as pd
 
 def explore_data():
     """ Getting to know the dataset (to cleanup and set up models). """
+    
     df = pd.read_csv('DisasterDeclarationsSummaries.csv')
 
+    print "-----------------------------------------"
+    print "-----------------------------------------"
     print "TOTAL # OBSERVATIONS:", len(df.index) # 48054
     print "\nCOLUMNS NAMES:\n", list(df) 
     # ['disasterNumber', 'ihProgramDeclared', 'iaProgramDeclared', 'paProgramDeclared', 'hmProgramDeclared', 'state', 'declarationDate', 'fyDeclared', 'disasterType', 'incidentType', 'title', 'incidentBeginDate', 'incidentEndDate', 'disasterCloseOutDate', 'declaredCountyArea', 'placeCode', 'hash', 'lastRefresh']
+    print "-----------------------------------------"
     print "-----------------------------------------"
 
     for i, column in enumerate(list(df)):
@@ -23,11 +27,12 @@ def explore_data():
         print "MIN and MAX VALUES :", (min(values), max(values))
         print "-----------------------------------------"
 
+
 def explore_dropped():
     """ Drop duplicates/missingness and explore data. """
 
     df = pd.read_csv('DisasterDeclarationsSummaries.csv')
-    
+
     print "-----------------------------------------"
     print "-----------------------------------------"
     # Remove nan / missingness
