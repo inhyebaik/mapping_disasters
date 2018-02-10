@@ -9,7 +9,7 @@ import pandas as pd
 def get_disasters():
     """ Seeds DB. """
 
-    df = pd.read_csv('/DisasterDeclarationsSummaries.csv')
+    df = pd.read_csv('./DisasterDeclarationsSummaries.csv')
 
     # Remove duplicates, missingness, NaNs
 
@@ -24,9 +24,9 @@ def get_disasters():
 
     for i, row in df.iterrows():
 
-        disaster = Disaster(disaster_num=row['disasterNum'], 
+        disaster = Disaster(disaster_num=row['disasterNumber'], 
                             state=row['state'], 
-                            disaster_type=row['disasterType']
+                            disaster_type=row['disasterType'],
                             incident_type=row['incidentType'],
                             title=row['title'],
                             start=row['incidentBeginDate'],

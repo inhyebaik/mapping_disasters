@@ -8,3 +8,16 @@ from model import connect_to_db, db, Disaster
 app = Flask(__name__)
 app.secret_key = "abc"
 app.jinja_env.undefined = StrictUndefined
+
+
+#---------------------------------------------------------------------#
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
+@app.route('/disasters')
+def show_map():
+    return render_template('map.html')
+
