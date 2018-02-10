@@ -11,18 +11,25 @@ def explore_data():
 
     for i, column in enumerate(list(df)):
         
-        values = set(df[column])
+        values = list(df[column].unique())
         data_type = type(values[0])
 
         print "COLUMN # {} / {}".format(i+1, len(list(df))+1)
         print "COLUMN NAME:", column, data_type
         if len(values)>20:
-            print "\nVALUES: (10 of out {}): \n".format(len(values)), list[values][:20]
+            print "\nVALUES: (10 of out {}): \n".format(len(values)), values[:20]
         else:
             print "\nVALUES (all {}): \n".format(len(values)), values
         print "MIN and MAX VALUES :", (min(values), max(values))
         print "-----------------------------------------"
 
+def explore_dropped():
+    """ Drop duplicates/missingness and explore data. """
+
+    df = pd.read_csv('DisasterDeclarationsSummaries.csv')
+    
+    print "-----------------------------------------"
+    print "-----------------------------------------"
     # Remove nan / missingness
     df = df.dropna(axis=0, how='all')
     df = df.dropna()
@@ -32,5 +39,22 @@ def explore_data():
     # see how it affects sample size
     print "DROPPING DUPLICATES, MISSINGNESS, NaNs"
     print "TOTAL # OBSERVATIONS:", len(df.index) # 36804
+    print "-----------------------------------------"
+    print "-----------------------------------------"
 
-explore_data()
+    for i, column in enumerate(list(df)):
+        
+        values = list(df[column].unique())
+        data_type = type(values[0])
+
+        print "COLUMN # {} / {}".format(i+1, len(list(df))+1)
+        print "COLUMN NAME:", column, data_type
+        if len(values)>20:
+            print "\nVALUES: (10 of out {}): \n".format(len(values)), values[:20]
+        else:
+            print "\nVALUES (all {}): \n".format(len(values)), values
+        print "MIN and MAX VALUES :", (min(values), max(values))
+        print "-----------------------------------------"
+
+# explore_data()
+explore_dropped()
