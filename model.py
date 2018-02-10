@@ -14,6 +14,8 @@ class Disaster(db.Model):
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     disaster_num = db.Column(db.Integer, nullable=True)
     state = db.Column(db.String(10), nullable=True)
+    state_lat = db.Column(db.String(100), nullable=True)
+    state_long = db.Column(db.String(100), nullable=True)
     disaster_type = db.Column(db.String(10), nullable=True)
     incident_type = db.Column(db.String(100), nullable=True)
     title = db.Column(db.String(200), nullable=True)
@@ -31,6 +33,7 @@ class Disaster(db.Model):
 
 def connect_to_db(app):
     """Connect the database to Flask app."""
+
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///disasters'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app

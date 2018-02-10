@@ -36,14 +36,19 @@ def explore_dropped():
     print "-----------------------------------------"
     print "-----------------------------------------"
     # Remove nan / missingness
+    df = df.drop_duplicates()
     df = df.dropna(axis=0, how='all')
     df = df.dropna()
     df = df[~df.astype(str).eq('None').any(1)]
     df = df[df.astype(str).ne('None').all(1)]
 
+    print "STATES: {}".format(len(list(df['state'].unique())))
+    print list(df['state'].unique())
+
+
     # see how it affects sample size
     print "DROPPING DUPLICATES, MISSINGNESS, NaNs"
-    print "TOTAL # OBSERVATIONS:", len(df.index) # 36804
+    print "TOTAL # OBSERVATIONS:", len(df.index) # 2628
     print "-----------------------------------------"
     print "-----------------------------------------"
 
