@@ -4,6 +4,7 @@ from flask_debugtoolbar import DebugToolbarExtension
 from sqlalchemy.sql import label
 from sqlalchemy import func
 import datetime
+import os 
 
 from model import connect_to_db, db, Disaster
 
@@ -11,7 +12,8 @@ app = Flask(__name__)
 app.secret_key = "abc"
 app.jinja_env.undefined = StrictUndefined
 
-
+MAPS_API_KEY = os.environ.get('MAPS_API_KEY')
+DATABASE_URL=os.environ.get('DATABASE_URL')
 #---------------------------------------------------------------------#
 
 @app.route('/')
@@ -28,7 +30,7 @@ def show_map():
             'Mud/Landslide', 'Volcano', 'Toxic Substances', 'Human Cause', 
             'Terrorist', 'Tsunami']
 
-    return render_template('map.html', TYPES=TYPES)
+    return render_template('map.html', TYPES=TYPES, MAPS_API_KEY=MAPS_API_KEY)
 
 @app.route('/disasters.json')
 def get_disasters_data():
@@ -128,4 +130,4 @@ if __name__ == "__main__":
     app.debug = True
     connect_to_db(app)
     DebugToolbarExtension(app)
-    app.run(port=5000, host="0.0.0.0")
+    # app.run(port=5000, host="0.0.0.0")

@@ -1,9 +1,11 @@
 """ Data model for disasters. """
 
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 db = SQLAlchemy()
 
+DATABASE_URL = os.environ.get('DATABASE_URL')
 #---------------------------------------------------------------------#
 
 class Disaster(db.Model):
@@ -34,7 +36,7 @@ class Disaster(db.Model):
 def connect_to_db(app):
     """Connect the database to Flask app."""
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///disasters'
+    app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app
     db.init_app(app)
