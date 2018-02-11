@@ -15,15 +15,15 @@
 
     <form id='form' action='/filtered_type.json'> Show
         <select class='incident_type' id='select-type' name='incident_type'>
-          <option selected disabled>Filter by disaster type</option>
+          <option selected disabled>Filter disasters by type</option>
           <option value="all">All Types</option>
           {% for incident_type in TYPES %}
           <option value="{{incident_type}}">{{incident_type}}</option>
           {% endfor %}
-        </select> incidents
+        </select>
 
-        from <input type="date" name="min_date" id='min-date'>
-        and <input type="date" name="max_date" id='max-date'>
+        <span style="color:white;"> that occured between </span><input type="date" name="min_date" id='min-date'>
+        <span style="color:white;"> and </span> <input type="date" name="max_date" id='max-date'>
 
     <input type='submit'>
     </form>

@@ -4,7 +4,8 @@
 
 body {
   background-color: #04162b;
-  color: #FFFFFF
+  color: #FFFFFF;
+  font-family: 'Raleway', sans-serif;
 }
 
 a {
@@ -28,7 +29,6 @@ a:active {
 
 #disasterlink {
   padding: 200px;
-  font-family: 'Raleway', sans-serif;
   font-weight: 200;
   font-size: 36px;
   color: #fff;
@@ -38,7 +38,7 @@ a:active {
 /*Filter*/
 /*--------------------------------*/
 #filter {
-  text-align: right ;
+  text-align: center;
   color: #04162b;
 }
 

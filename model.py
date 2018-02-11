@@ -1,6 +1,7 @@
 """ Data model for disasters. """
 
 from flask_sqlalchemy import SQLAlchemy
+from flask.ext.heroku import Heroku
 import os
 
 db = SQLAlchemy()
@@ -46,7 +47,4 @@ if __name__ == "__main__":
     from server import app
     connect_to_db(app)
     print "Connected to DB."
-
-
-
 

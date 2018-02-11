@@ -1,10 +1,11 @@
 from jinja2 import StrictUndefined
-from flask import Flask, render_template, request, jsonify
 from flask_debugtoolbar import DebugToolbarExtension
+from flask import Flask, render_template, request, jsonify
+
 from sqlalchemy.sql import label
 from sqlalchemy import func
-import datetime
-import os 
+
+import datetime, os
 
 from model import connect_to_db, db, Disaster
 
