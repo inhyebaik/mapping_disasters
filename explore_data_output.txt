@@ -1,0 +1,138 @@
+-----------------------------------------
+-----------------------------------------
+DROPPING DUPLICATES, MISSINGNESS, NaNs
+TOTAL # OBSERVATIONS: 36804
+-----------------------------------------
+-----------------------------------------
+
+
+STATES: 59
+['IN', 'CA', 'OR', 'WA', 'ID', 'MN', 'NV', 'MI', 'OH', 'WI', 'IA', 'IL', 'ND', 'MO', 'CO', 'TX', 'SD', 'KS', 'NJ', 'NY', 'NM', 'PA', 'DE', 'LA', 'MS', 'FL', 'GA', 'AS', 'AZ', 'NE', 'WV', 'KY', 'PW', 'AK', 'NC', 'AR', 'OK', 'HI', 'TN', 'VA', 'VT', 'AL', 'ME', 'PR', 'VI', 'MD', 'NH', 'MA', 'MT', 'GU', 'MP', 'RI', 'WY', 'MH', 'FM', 'CT', 'UT', 'SC', 'DC']
+
+
+COLUMN # 1 / 19
+COLUMN NAME: disasterNumber <type 'numpy.int64'>
+
+VALUES: (10 of out 2628): 
+[91, 183, 184, 185, 186, 188, 187, 189, 190, 191, 192, 193, 194, 195, 196, 198, 200, 199, 197, 201]
+MIN and MAX VALUES : (91, 5083)
+-----------------------------------------
+COLUMN # 2 / 19
+COLUMN NAME: ihProgramDeclared <type 'numpy.int64'>
+
+VALUES (all 2): 
+[0, 1]
+MIN and MAX VALUES : (0, 1)
+-----------------------------------------
+COLUMN # 3 / 19
+COLUMN NAME: iaProgramDeclared <type 'numpy.int64'>
+
+VALUES (all 2): 
+[1, 0]
+MIN and MAX VALUES : (0, 1)
+-----------------------------------------
+COLUMN # 4 / 19
+COLUMN NAME: paProgramDeclared <type 'numpy.int64'>
+
+VALUES (all 2): 
+[1, 0]
+MIN and MAX VALUES : (0, 1)
+-----------------------------------------
+COLUMN # 5 / 19
+COLUMN NAME: hmProgramDeclared <type 'numpy.int64'>
+
+VALUES (all 2): 
+[0, 1]
+MIN and MAX VALUES : (0, 1)
+-----------------------------------------
+COLUMN # 6 / 19
+COLUMN NAME: state <type 'str'>
+
+VALUES: (10 of out 59): 
+['IN', 'CA', 'OR', 'WA', 'ID', 'MN', 'NV', 'MI', 'OH', 'WI', 'IA', 'IL', 'ND', 'MO', 'CO', 'TX', 'SD', 'KS', 'NJ', 'NY']
+MIN and MAX VALUES : ('AK', 'WY')
+-----------------------------------------
+COLUMN # 7 / 19
+COLUMN NAME: declarationDate <type 'str'>
+
+VALUES: (10 of out 2258): 
+['1959-01-28T19:00:00-05:00', '1964-12-23T19:00:00-05:00', '1964-12-28T19:00:00-05:00', '1964-12-30T19:00:00-05:00', '1965-04-10T20:00:00-04:00', '1965-01-17T19:00:00-05:00', '1965-04-13T20:00:00-04:00', '1965-04-20T20:00:00-04:00', '1965-04-21T20:00:00-04:00', '1965-04-24T20:00:00-04:00', '1965-05-09T20:00:00-04:00', '1965-05-10T20:00:00-04:00', '1965-06-13T20:00:00-04:00', '1965-06-18T20:00:00-04:00', '1965-05-25T20:00:00-04:00', '1965-06-22T20:00:00-04:00', '1965-07-26T20:00:00-04:00', '1965-08-17T20:00:00-04:00', '1965-06-30T20:00:00-04:00', '1965-09-09T20:00:00-04:00']
+MIN and MAX VALUES : ('1959-01-28T19:00:00-05:00', '2017-10-08T03:35:00-04:00')
+-----------------------------------------
+COLUMN # 8 / 19
+COLUMN NAME: fyDeclared <type 'numpy.int64'>
+
+VALUES: (10 of out 54): 
+[1959, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983]
+MIN and MAX VALUES : (1959, 2017)
+-----------------------------------------
+COLUMN # 9 / 19
+COLUMN NAME: disasterType <type 'str'>
+
+VALUES (all 4): 
+['DR', 'FS', 'FM', 'EM']
+MIN and MAX VALUES : ('DR', 'FS')
+-----------------------------------------
+COLUMN # 10 / 19
+COLUMN NAME: incidentType <type 'str'>
+
+VALUES: (10 of out 22): 
+['Flood', 'Tornado', 'Earthquake', 'Severe Storm(s)', 'Drought', 'Hurricane', 'Typhoon', 'Fire', 'Severe Ice Storm', 'Freezing', 'Snow', 'Coastal Storm', 'Fishing Losses', 'Dam/Levee Break', 'Mud/Landslide', 'Volcano', 'Toxic Substances', 'Human Cause', 'Terrorist', 'Tsunami']
+MIN and MAX VALUES : ('Chemical', 'Volcano')
+-----------------------------------------
+COLUMN # 11 / 19
+COLUMN NAME: title <type 'str'>
+
+VALUES: (10 of out 1253): 
+['FLOOD', 'HEAVY RAINS & FLOODING', 'FLOODING', 'SEVERE STORMS, HEAVY RAINS & FLOODING', 'TORNADOES & SEVERE STORMS', 'TORNADOES, SEVERE STORMS & FLOODING', 'EARTHQUAKE', 'TORNADOES & FLOODING', 'SEVERE STORMS & FLOODING', 'WATER SHORTAGE', 'HURRICANE BETSY', 'TYPHOON & HIGH TIDES', 'TYPHOON SALLY', 'TORNADOES', 'FOREST FIRES', 'HURRICANE BEULAH', 'SEVERE ICE STORM', 'TORNADO & SEVERE STORM', 'TYPHOON JEAN', 'SEVERE STORMS, HIGH WINDS & FLOODING']
+MIN and MAX VALUES : (' HURRICANE EARL', 'YUBA FIRE')
+-----------------------------------------
+COLUMN # 12 / 19
+COLUMN NAME: incidentBeginDate <type 'str'>
+
+VALUES: (10 of out 2082): 
+['1959-01-28T19:00:00-05:00', '1964-12-23T19:00:00-05:00', '1964-12-28T19:00:00-05:00', '1964-12-30T19:00:00-05:00', '1965-04-10T20:00:00-04:00', '1965-01-17T19:00:00-05:00', '1965-04-13T20:00:00-04:00', '1965-04-20T20:00:00-04:00', '1965-04-21T20:00:00-04:00', '1965-04-24T20:00:00-04:00', '1965-05-09T20:00:00-04:00', '1965-05-10T20:00:00-04:00', '1965-06-13T20:00:00-04:00', '1965-06-18T20:00:00-04:00', '1965-05-25T20:00:00-04:00', '1965-06-22T20:00:00-04:00', '1965-07-26T20:00:00-04:00', '1965-08-17T20:00:00-04:00', '1965-06-30T20:00:00-04:00', '1965-09-09T20:00:00-04:00']
+MIN and MAX VALUES : ('1959-01-28T19:00:00-05:00', '2017-10-06T11:34:00-04:00')
+-----------------------------------------
+COLUMN # 13 / 19
+COLUMN NAME: incidentEndDate <type 'str'>
+
+VALUES: (10 of out 2112): 
+['1959-01-28T19:00:00-05:00', '1964-12-23T19:00:00-05:00', '1964-12-28T19:00:00-05:00', '1964-12-30T19:00:00-05:00', '1965-04-10T20:00:00-04:00', '1965-01-17T19:00:00-05:00', '1965-04-13T20:00:00-04:00', '1965-04-20T20:00:00-04:00', '1965-04-21T20:00:00-04:00', '1965-04-24T20:00:00-04:00', '1965-05-09T20:00:00-04:00', '1965-05-10T20:00:00-04:00', '1965-06-13T20:00:00-04:00', '1965-06-18T20:00:00-04:00', '1965-05-25T20:00:00-04:00', '1965-06-22T20:00:00-04:00', '1965-07-26T20:00:00-04:00', '1965-08-17T20:00:00-04:00', '1965-06-30T20:00:00-04:00', '1965-09-09T20:00:00-04:00']
+MIN and MAX VALUES : ('1959-01-28T19:00:00-05:00', '2017-10-18T19:59:00-04:00')
+-----------------------------------------
+COLUMN # 14 / 19
+COLUMN NAME: disasterCloseOutDate <type 'str'>
+
+VALUES: (10 of out 1367): 
+['1960-10-31T20:00:00-04:00', '1976-04-04T19:00:00-05:00', '1968-08-11T20:00:00-04:00', '1968-02-01T19:00:00-05:00', '1968-02-13T19:00:00-05:00', '1970-01-28T19:00:00-05:00', '1968-03-19T20:00:00-04:00', '1969-05-22T20:00:00-04:00', '1967-11-30T19:00:00-05:00', '1967-03-23T20:00:00-04:00', '1967-09-04T20:00:00-04:00', '1968-10-28T20:00:00-04:00', '1967-11-06T19:00:00-05:00', '1968-12-16T19:00:00-05:00', '1968-09-26T20:00:00-04:00', '1971-02-28T19:00:00-05:00', '1967-05-17T20:00:00-04:00', '1968-03-03T19:00:00-05:00', '1968-02-28T19:00:00-05:00', '1967-08-07T20:00:00-04:00']
+MIN and MAX VALUES : ('1960-10-31T20:00:00-04:00', '2018-01-24T18:59:00-05:00')
+-----------------------------------------
+COLUMN # 15 / 19
+COLUMN NAME: declaredCountyArea <type 'str'>
+
+VALUES: (10 of out 2099): 
+['Clay (County)', 'Humboldt (County)', 'Modoc (County)', 'Sacramento (County)', 'Butte (County)', 'Marin (County)', 'Plumas (County)', 'Alpine (County)', 'Glenn (County)', 'Lassen (County)', 'Napa (County)', 'Placer (County)', 'Colusa (County)', 'Amador (County)', 'Del Norte (County)', 'Lake (County)', 'El Dorado (County)', 'Mendocino (County)', 'Nevada (County)', 'San Joaquin (County)']
+MIN and MAX VALUES : ('Abbeville (County)', 'Ziebach (County)')
+-----------------------------------------
+COLUMN # 16 / 19
+COLUMN NAME: placeCode <type 'numpy.float64'>
+
+VALUES: (10 of out 440): 
+[99021.0, 99023.0, 99049.0, 99067.0, 99007.0, 99041.0, 99063.0, 99003.0, 99035.0, 99055.0, 99061.0, 99011.0, 99005.0, 99015.0, 99033.0, 99017.0, 99045.0, 99057.0, 99077.0, 99089.0]
+MIN and MAX VALUES : (0.0, 99507.0)
+-----------------------------------------
+COLUMN # 17 / 19
+COLUMN NAME: hash <type 'str'>
+
+VALUES: (10 of out 36804): 
+['78224dcde8a6003a3dfd2fa78e8c20ef', 'fd99a4e0711eb68e5c8b51c2187d13f5', 'ebc49a5641ce88d41cea2bf00dd643b5', 'ce7cac397f4c290e14452057a31aa7bf', 'c0799955c8e3dc31e9001e98d0de82c8', 'ca0f9a1289962dc22498da62dedd4629', 'e0b64f7a4560fc0b25abfd26172a071c', '29e57141240fb17aea9b385fd019aec8', 'ff33fc3f7c36c0ad594c993ac21778c3', '83b10e9b8542d3180e540636f7ea7d28', 'bd0c7196087c3e50910412ccc7a322cf', '9371e7fdc4b1fcc6a61d9aa95a99ccb4', 'def17c7d49b88e19daf90f75ec8275cd', '36f448bc61f471302f975eba5a414199', 'de68c3380fdcc47a531e800630480875', '07f4bd6effce9dbbb612869bf3ed23a2', '831f93e931482ccd7d53aa64acc1d344', 'd371da5a6922663343713c7062919cd2', '5b02e48aa725c79dc94b6de8f33ae933', 'a6ae914df28b8a5c8d7278a41f9ab167']
+MIN and MAX VALUES : ('00014153d11ea73300577fb17a511e9b', 'fffe1077fdc82410f06e4d9c758fc3f5')
+-----------------------------------------
+COLUMN # 18 / 19
+COLUMN NAME: lastRefresh <type 'str'>
+
+VALUES: (10 of out 118): 
+['2018-02-09T09:38:26-05:00', '2018-02-09T09:38:27-05:00', '2018-02-09T09:38:28-05:00', '2018-02-09T09:38:29-05:00', '2018-02-09T09:38:30-05:00', '2018-02-09T09:38:31-05:00', '2018-02-09T09:38:32-05:00', '2018-02-09T09:38:33-05:00', '2018-02-09T09:38:34-05:00', '2018-02-09T09:38:35-05:00', '2018-02-09T09:38:36-05:00', '2018-02-09T09:38:37-05:00', '2018-02-09T09:38:38-05:00', '2018-02-09T09:38:39-05:00', '2018-02-09T09:38:40-05:00', '2018-02-09T09:38:41-05:00', '2018-02-09T09:38:42-05:00', '2018-02-09T09:38:43-05:00', '2018-02-09T09:38:44-05:00', '2018-02-09T09:38:45-05:00']
+MIN and MAX VALUES : ('2018-02-09T09:38:26-05:00', '2018-02-09T09:40:30-05:00')
+-----------------------------------------
