@@ -1,7 +1,6 @@
 """ Data model for disasters. """
 
 from flask_sqlalchemy import SQLAlchemy
-from flask.ext.heroku import Heroku
 import os
 
 db = SQLAlchemy()
