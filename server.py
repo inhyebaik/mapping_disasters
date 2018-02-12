@@ -127,7 +127,7 @@ def get_disasters_data():
         disasters['counts'].append(count)
 
     disasters['counts'].sort()
-    print disasters['counts']
+    # print disasters['counts']
     return jsonify(disasters)
 
 
