@@ -3,7 +3,7 @@ import pandas as pd
 import dateutil.parser
 import os
 from model import Disaster, connect_to_db, db
-from server import app
+# from server import app
 
 #---------------------------------------------------------------------#
 
