@@ -87,7 +87,8 @@ def get_disasters():
 
 
 #---------------------------------------------------------------------#
-if __name__ == '__main__':
-    connect_to_db(app, os.environ.get("DATABASE_URL"))
-    db.create_all(app=app)
-    get_disasters()
+# if __name__ == '__main__':
+#     connect_to_db(app, os.environ.get('DATABASE_URL'))
+#     # print os.environ.get('DATABASE_URL')
+#     db.create_all(app=app)
+#     get_disasters()
