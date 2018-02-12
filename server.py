@@ -9,7 +9,7 @@ from sqlalchemy.sql import label
 from sqlalchemy import func
 
 from model import db, Disaster, connect_to_db
-# from seed import get_disasters
+from seed import get_disasters
 
 app = Flask(__name__)
 app.secret_key = "abc"
