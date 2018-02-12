@@ -1,13 +1,16 @@
 """Load data into database."""
-
-from model import Disaster, connect_to_db, db
-from server import app
 import pandas as pd 
 import dateutil.parser
 
+from model import Disaster, connect_to_db, db
+from server import app
+
 #---------------------------------------------------------------------#
 
-latlong = {'WA': (47.400902, -121.490494), 'DE': (39.318523, -75.507141), 
+def get_disasters():
+    """ Seeds DB. """
+
+    latlong = {'WA': (47.400902, -121.490494), 'DE': (39.318523, -75.507141), 
            'DC': (38.897438, -77.026817), 'WI': (44.268543, -89.616508), 
            'WV': (38.491226, -80.954453), 'HI': (21.094318, -157.498337), 
            'FL': (27.766279, -81.686783), 'WY': (42.755966, -107.30249), 
@@ -37,9 +40,6 @@ latlong = {'WA': (47.400902, -121.490494), 'DE': (39.318523, -75.507141),
            'VI': (18.3358, 64.8963), 'PW': (7.5150, 134.5825), 
            'MP': (15.0979, 145.6739), 'FM': (7.4256, 150.5508), 
            'MH':(7.1315, 171.1845)}
-
-def get_disasters():
-    """ Seeds DB. """
 
     df = pd.read_csv('DisasterDeclarationsSummaries.csv')
 
@@ -86,7 +86,7 @@ def get_disasters():
 
 
 #---------------------------------------------------------------------#
-if __name__ == '__main__':
-    connect_to_db(app)
-    db.create_all()
-    get_disasters()
+# if __name__ == '__main__':
+#     connect_to_db(app, os.environ.get("DATABASE_URL"))
+#     db.create_all(app=app)
+#     get_disasters()
