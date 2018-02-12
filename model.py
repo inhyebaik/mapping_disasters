@@ -31,10 +31,10 @@ class Disaster(db.Model):
 
 #---------------------------------------------------------------------#
 
-def connect_to_db(app):
+def connect_to_db(app, uri=None):
     """Connect the database to Flask app."""
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+    app.config['SQLALCHEMY_DATABASE_URI'] = uri or os.environ.get('DATABASE_URL')
     # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app
     db.init_app(app)
