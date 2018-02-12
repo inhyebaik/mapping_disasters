@@ -1,9 +1,9 @@
 """Load data into database."""
 import pandas as pd 
 import dateutil.parser
-
+import os
 from model import Disaster, connect_to_db, db
-# from server import app
+from server import app
 
 #---------------------------------------------------------------------#
 
@@ -83,10 +83,11 @@ def get_disasters():
 
     # commit all modifications to DB
     db.session.commit()
+    print "Done seeding."
 
 
 #---------------------------------------------------------------------#
-# if __name__ == '__main__':
-#     connect_to_db(app, os.environ.get("DATABASE_URL"))
-#     db.create_all(app=app)
-#     get_disasters()
+if __name__ == '__main__':
+    connect_to_db(app, os.environ.get("DATABASE_URL"))
+    db.create_all(app=app)
+    get_disasters()

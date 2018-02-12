@@ -9,7 +9,7 @@ from sqlalchemy.sql import label
 from sqlalchemy import func
 
 from model import db, Disaster, connect_to_db
-from seed import get_disasters
+# from seed import get_disasters
 
 app = Flask(__name__)
 app.secret_key = "abc"
@@ -23,6 +23,9 @@ MAPS_API_KEY = os.environ.get('MAPS_API_KEY')
 def index():
     return render_template('index.html')
 
+@app.route("/error")
+def error():
+    raise Exception("Error!")
 
 @app.route('/disasters')
 def show_map():
@@ -128,6 +131,7 @@ def get_disasters_data():
     return jsonify(disasters)
 
 
+
 #---------------------------------------------------------------------#
 if __name__ == "__main__":
     # app.debug = True
@@ -138,7 +142,7 @@ if __name__ == "__main__":
 
     connect_to_db(app, os.environ.get("DATABASE_URL"))
     db.create_all(app=app)
-    get_disasters() # seed DB
+    # get_disasters() # seed DB
     DEBUG = "NO_DEBUG" not in os.environ
     PORT = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=PORT, debug=DEBUG)
