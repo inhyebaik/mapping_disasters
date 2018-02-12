@@ -1,20 +1,21 @@
+import datetime, os
+
 from jinja2 import StrictUndefined
+
 from flask_debugtoolbar import DebugToolbarExtension
 from flask import Flask, render_template, request, jsonify
 
 from sqlalchemy.sql import label
 from sqlalchemy import func
 
-import datetime, os
-
-from model import connect_to_db, db, Disaster
+from model import db, Disaster, connect_to_db
 
 app = Flask(__name__)
 app.secret_key = "abc"
 app.jinja_env.undefined = StrictUndefined
 
 MAPS_API_KEY = os.environ.get('MAPS_API_KEY')
-DATABASE_URL=os.environ.get('DATABASE_URL')
+
 #---------------------------------------------------------------------#
 
 @app.route('/')
@@ -128,7 +129,14 @@ def get_disasters_data():
 
 #---------------------------------------------------------------------#
 if __name__ == "__main__":
-    app.debug = True
-    connect_to_db(app)
-    DebugToolbarExtension(app)
-    # app.run(port=5000, host="0.0.0.0")
+    # app.debug = True
+    # connect_to_db(app)
+    # DebugToolbarExtension(app)
+    # app.run()
+    # # app.run(port=5000, host="0.0.0.0")
+
+    connect_to_db(app, os.environ.get("DATABASE_URL"))
+    db.create_all(app=app)
+    DEBUG = "NO_DEBUG" not in os.environ
+    PORT = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=PORT, debug=DEBUG)

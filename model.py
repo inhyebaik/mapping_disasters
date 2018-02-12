@@ -1,11 +1,9 @@
-""" Data model for disasters. """
+import os
 
 from flask_sqlalchemy import SQLAlchemy
-import os
 
 db = SQLAlchemy()
 
-DATABASE_URL = os.environ.get('DATABASE_URL')
 #---------------------------------------------------------------------#
 
 class Disaster(db.Model):
@@ -36,14 +34,14 @@ class Disaster(db.Model):
 def connect_to_db(app):
     """Connect the database to Flask app."""
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+    # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app
     db.init_app(app)
-    db.create_all()
-
-if __name__ == "__main__":
-    from server import app
-    connect_to_db(app)
     print "Connected to DB."
+
+# if __name__ == "__main__":
+#     from server import app
+#     connect_to_db(app, DATABASE_URL)
+#     print "Connected to DB."
 
